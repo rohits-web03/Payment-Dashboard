@@ -119,29 +119,31 @@ const PaymentDashboard = () => {
             </tbody>
           </table>
           {transactions.length > 0 && (
-            <div className="flex justify-center items-center my-6">
+            <div className="flex justify-center items-center my-5">
               <div
                 onClick={() => selectPageHandler(page - 1)}
-                className={`flex justify-center items-center px-4 py-2 border border-gray-300 cursor-pointer ${page > 1 ? "" : "opacity-0"}`}
+                className={`flex justify-center items-center px-4 py-2 border border-gray-300 cursor-pointer ${page > 1 ? "" : "text-slate-400"}`}
               >
                 <GrFormPrevious />
                 <p>Previous</p>
               </div>
 
-              {[...Array(Math.ceil(transactions.filter((data) => handleSearch(data)).length / 5))].map((_, i) => (
-                <div
-                  key={i}
-                  onClick={() => selectPageHandler(i + 1)}
-                  className={`px-4 py-2 border border-gray-300 rounded-md cursor-pointer mx-1 ${page === i + 1 ? "bg-blue-500" : ""}`}
-                >
-                  {i + 1}
-                </div>
-              ))}
+              <div className='flex flex-wrap'>
+                {[...Array(Math.ceil(transactions.filter((data) => handleSearch(data)).length / 5))].map((_, i) => (
+                  <div
+                    key={i}
+                    onClick={() => selectPageHandler(i + 1)}
+                    className={`px-4 py-2 border border-gray-300 rounded-md cursor-pointer mx-1 ${page === i + 1 ? "bg-blue-500" : ""}`}
+                  >
+                    {i + 1}
+                  </div>
+                ))}
+              </div>
 
               <div
                 onClick={() => selectPageHandler(page + 1)}
                 className={`flex justify-center items-center px-4 py-2 border border-gray-300 cursor-pointer ${
-                  page < transactions.filter((data) => handleSearch(data)).length / 5 ? "" : "opacity-0"
+                  page < transactions.filter((data) => handleSearch(data)).length / 5 ? "" : "text-slate-400"
                 }`}
               >
                   <p>Next</p>
