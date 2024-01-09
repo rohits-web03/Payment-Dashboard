@@ -75,12 +75,6 @@ export const sidebarLinks=[
 ];
 
 export const transactionData=[
-    {
-        orderId:'#281209',
-        orderDate:'14.5.2023',
-        orderAmount:'₹1,278.23',
-        transactionFees:'₹9945.68'
-    },
     {"orderId":"#281209","orderDate":"27.7.2023","orderAmount":"₹6785.62","transactionFees":"₹8316.15"},
     {"orderId":"#281209","orderDate":"4.7.2023","orderAmount":"₹4266.40","transactionFees":"₹2149.08"},
     {"orderId":"#281209","orderDate":"25.1.2023","orderAmount":"₹5413.15","transactionFees":"₹1536.66"},
