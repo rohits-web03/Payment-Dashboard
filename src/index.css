@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .width-acc-to-sidebar {
+      width: calc(100vw - 200px);
+    }
+  }

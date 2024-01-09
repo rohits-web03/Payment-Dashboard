@@ -7,7 +7,7 @@ import { MdOutlineExpandMore } from "react-icons/md";
 const Sidebar = () => {
     const [open,setOpen]=useState();
   return (
-    <div className={`flex justify-between flex-col items-center h-screen bg-[#1e2640] w-60 font-inter text-white`}>
+    <div className={`flex justify-between flex-col items-center h-screen bg-[#1e2640] w-60 font-inter text-white fixed top-0 left-0 overflow-y-auto`}>
         <div className='flex flex-col justify-center items-center w-full'>
             <div className='flex justify-between items-center w-full px-4 py-2'>
                 <div className='flex justify-center items-center gap-3 p-2'>

@@ -32,7 +32,7 @@ const PaymentDashboard = () => {
   };
 
   return (
-    <div className='w-full flex flex-col'>
+    <div className='flex flex-col width-acc-to-sidebar ml-60'>
       <div className='w-full flex justify-between items-center px-4 py-2'>
         <div className='flex justify-center items-center gap-3'>
           <p className='font-semibold'>Payments</p>
@@ -84,7 +84,7 @@ const PaymentDashboard = () => {
                 Sort
                 <BiSortAlt2 />
               </p>
-              <FaDownload className='border border-slate-400 rounded-md'/>
+              <FaDownload className='border border-slate-400 rounded-md p-2 w-9 h-9 cursor-pointer'/>
             </div>
           </div>
           <table className="min-w-full divide-y divide-gray-200 shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
