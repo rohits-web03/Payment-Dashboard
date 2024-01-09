@@ -32,8 +32,8 @@ const PaymentDashboard = () => {
   };
 
   return (
-    <div className='flex flex-col width-acc-to-sidebar ml-60'>
-      <div className='w-full flex justify-between items-center px-4 py-2'>
+    <div className='flex flex-col width-acc-to-sidebar ml-60 max-sm:ml-0 max-sm:w-full'>
+      <div className='w-full flex max-sm:flex-col max-sm:gap-4 justify-between items-center px-4 py-2'>
         <div className='flex justify-center items-center gap-3'>
           <p className='font-semibold'>Payments</p>
           <div className='flex justify-center items-center gap-1 text-slate-600'>
@@ -41,9 +41,9 @@ const PaymentDashboard = () => {
             <p className='text-base'>How it works</p>
           </div>
         </div>
-        <div className='flex justify-start items-center bg-[#f2f2f2] px-2 rounded-lg w-[40%]'>
+        <div className='flex justify-start items-center bg-[#f2f2f2] px-2 rounded-lg w-[40%] max-sm:w-full'>
           <IoSearch />
-          <input type='text' placeholder='Search features,tutorials,etc' className='bg-[#f2f2f2] focus:outline-none p-2'/>
+          <input type='text' placeholder='Search features,tutorials,etc' className='bg-[#f2f2f2] focus:outline-none p-2 max-sm:w-full'/>
         </div>
         <div className='flex justify-center items-center gap-2'>
           <RiMessage2Fill className='bg-slate-300 rounded-full p-1 text-3xl cursor-pointer'/>
@@ -60,7 +60,7 @@ const PaymentDashboard = () => {
             <option value="Last Year">Last Year</option>
           </select>
         </div>
-        <div className='grid grid-cols-2 gap-2'>
+        <div className='grid grid-cols-2 gap-2 max-sm:grid-cols-1'>
           <OverviewCard title="Online orders" value="231" money={false}/>
           <OverviewCard title="Amount received" value="23,92,312.19" money={true}/>
         </div>
@@ -68,7 +68,7 @@ const PaymentDashboard = () => {
       <div className='p-4 flex flex-col justify-center'>
         <p className='text-2xl font-semibold p-2'>Transactions | This Month</p>
         <div className='flex flex-col bg-[#ffffff] shadow mt-2 p-2'>
-          <div className='flex justify-between items-center mb-2'>
+          <div className='flex justify-between items-center max-sm:flex-col max-sm:gap-4 mb-2 max-sm:mb-4'>
             <div className='flex justify-start items-center bg-[#ffffff] px-2 rounded-lg border border-slate-400'>
               <IoSearch />
               <input
@@ -88,7 +88,7 @@ const PaymentDashboard = () => {
             </div>
           </div>
           <table className="min-w-full divide-y divide-gray-200 shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <thead className="bg-gray-200">
+            <thead className="bg-gray-200 max-sm:hidden">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Order ID
@@ -109,11 +109,15 @@ const PaymentDashboard = () => {
                 return handleSearch(user)
               }
               ).slice(page * 5 - 5, page * 5).map((item, index) => (
-                <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.orderId}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.orderDate}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.orderAmount}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.transactionFees}</td>
+                <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:hidden">{item.orderId}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:hidden">{item.orderDate}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:hidden">{item.orderAmount}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:hidden">{item.transactionFees}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:block sm:hidden"><span className='font-semibold'>Order ID: </span>{item.orderId}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:block sm:hidden"><span className='font-semibold'>Order Date: </span>{item.orderDate}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:block sm:hidden"><span className='font-semibold'>Order Amount: </span>{item.orderAmount}</td>
+                  <td className="px-6 py-4 whitespace-nowrap max-sm:block sm:hidden"><span className='font-semibold'>Order Amount: </span>{item.transactionFees}</td>
                 </tr>
               ))}
             </tbody>
