@@ -1,8 +1,12 @@
-# React + Vite
+# Payments Dashboard(Dukaan)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Created according to the Figma Design
+- Fully Resposive 
+- Filter the transactional data by orderID
+- Pagination to show the data in a structured manner
 
-Currently, two official plugins are available:
+[Demo Link](https://payment-dashboard-dukaan.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Figma Design Link](https://www.figma.com/file/1QTpfgcJLng3SEHv3V7Nr4/?viewer=1&node-id=0%3A5723&fuid=1265697139022270749)
+
+![Demo Project](<public/Dukaan Dashboard.png>)
